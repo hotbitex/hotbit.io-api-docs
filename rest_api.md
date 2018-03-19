@@ -11,7 +11,7 @@ REST，即Representational State Transfer的缩写，是目前最流行的一种
     
 ## 请求交互    
 
-REST访问的根URL：<https://www.10.10.1.4:18083.com/api/v1>  
+REST访问的根URL：<https://www.hotbit.io/api/v1>  
 
 所有请求基于Https协议，请求头信息中contentType需要统一设置为：application/x-www-form-urlencoded
     
