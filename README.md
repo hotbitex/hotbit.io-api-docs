@@ -44,7 +44,7 @@ WebSocket是HTML5一种新的协议(Protocol)。它实现了客户端与服务�
 
 ## 开启API权限    
 
-用户的API权限在网站的基本设置->我的API内获取。点击申请API即可获得，其中apiKey是HOTBIT提供给API用户的访问密钥，secretKey用于对请求参数签名的私钥。    
+用户的API权限在网站的账户管理->API管理内获取。点击申请API即可获得，其中apiKey是HOTBIT提供给API用户的访问密钥，secretKey用于对请求参数签名的私钥。    
 
 **_注意： 请勿向任何人泄露这两个参数，这两个参数关乎您账号的安全。_**    
      
