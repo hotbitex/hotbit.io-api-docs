@@ -4,6 +4,9 @@
 
 API基于websocket的json/rpc。
 
+请求地址：
+websoket访问的根URL：https://ws.hotbit.io
+
 请求：
 
 通过websocket的send方法，将json/rpc数据发往服务器，有以下三个字段：
