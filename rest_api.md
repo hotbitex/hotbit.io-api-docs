@@ -11,7 +11,7 @@ REST，即Representational State Transfer的缩写，是目前最流行的一种
     
 ## 请求交互    
 
-REST访问的根URL：<https://www.hotbit.io/api/v1>  
+REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 所有请求基于Https协议，请求头信息中contentType需要统一设置为：application/x-www-form-urlencoded
     
@@ -79,7 +79,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/system.time |  |
+| https://api.hotbit.io/api/v1/system.time |  |
 
 ```
  Response:{"error": null, "result": 1520919059}
@@ -107,7 +107,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/balance.query  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"] |
+| https://api.hotbit.io/api/v1/balance.query  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"] |
 
 ```
  Response:{
@@ -138,7 +138,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/balance.history  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=BTC&business=deposit&start_time=1511967657&end_time =1512050400&offset=0&limit=100 |
+| https://api.hotbit.io/api/v1/balance.history  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=BTC&business=deposit&start_time=1511967657&end_time =1512050400&offset=0&limit=100 |
 
 ```
  Response:{
@@ -160,7 +160,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/asset.list  |  |
+| https://api.hotbit.io/api/v1/asset.list  |  |
 
 ```
  Response:
@@ -196,7 +196,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/asset.summary?assets=[&quot;BTC&quot;,&quot;ETH&quot;]  |   |
+| https://api.hotbit.io/api/v1/asset.summary?assets=[&quot;BTC&quot;,&quot;ETH&quot;]  |   |
 
 ```
  Response:
@@ -248,7 +248,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/asset.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/asset.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
 
 ```
  Response:{
@@ -275,7 +275,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/asset.summary  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/asset.summary  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
 
 ```
  Response:{
@@ -301,7 +301,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/asset.summary?api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=1000&limit=10
+| https://api.hotbit.io/api/v1/asset.summary?api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=1000&limit=10
   |  | 
 
 ```
@@ -359,7 +359,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/order.book?market=ETH/BTC&side=1&offset=0&limit=10   |   |
+| https://api.hotbit.io/api/v1/order.book?market=ETH/BTC&side=1&offset=0&limit=10   |   |
 
 ```
  Response: 
@@ -393,7 +393,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/order.depth?market=ETH/BTC&limit=100&interval=1000  |   |
+| https://api.hotbit.io/api/v1/order.depth?market=ETH/BTC&limit=100&interval=1000  |   |
 
 ```
  Response:
@@ -425,7 +425,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879emarket=ETH/BTC&offset=0&limit=100  |
+| https://api.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879emarket=ETH/BTC&offset=0&limit=100  |
 
 ```
  Response:{
@@ -456,7 +456,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879emarket=ETH/BTC&start_time=1511967657&end_time =1512050400&offset=0&limit=100&side=1  |
+| https://api.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879emarket=ETH/BTC&start_time=1511967657&end_time =1512050400&offset=0&limit=100&side=1  |
 
 ```
  Response:{
@@ -483,7 +483,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.last?market=ETH/BTC |  |
+| https://api.hotbit.io/api/v1/market.last?market=ETH/BTC |  |
 
 ```
  Response:
@@ -513,7 +513,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.deals?market=ETH/BTC&limit=10&last_id=1521100930 |  |
+| https://api.hotbit.io/api/v1/market.deals?market=ETH/BTC&limit=10&last_id=1521100930 |  |
 
 ```
  Response:
@@ -542,7 +542,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/user_deals | |
+| https://api.hotbit.io/api/v1/user_deals | |
 
 ```
  Response:
@@ -569,7 +569,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.kline?market=ETH/BTC&start_time=1521100000&end_time=1521101193&interval=60 | |
+| https://api.hotbit.io/api/v1/market.kline?market=ETH/BTC&start_time=1521100000&end_time=1521101193&interval=60 | |
 
 ```
  Response:
@@ -596,7 +596,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.status?market=ETH/BTC&period=10 | |
+| https://api.hotbit.io/api/v1/market.status?market=ETH/BTC&period=10 | |
 
 ```
  Response:
@@ -632,7 +632,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.status_today?market=ETH/BTC | |
+| https://api.hotbit.io/api/v1/market.status_today?market=ETH/BTC | |
 
 ```
  Response:
@@ -664,7 +664,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.list | |
+| https://api.hotbit.io/api/v1/market.list | |
 
 ```
  Response:
@@ -709,7 +709,7 @@ REST访问的根URL：<https://www.hotbit.io/api/v1>
 
 | url | body |
 | --- | --- |
-| https://www.hotbit.io/api/v1/market.list | |
+| https://api.hotbit.io/api/v1/market.list | |
 
 ```
  Response:
