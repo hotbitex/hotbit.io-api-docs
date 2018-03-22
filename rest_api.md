@@ -180,50 +180,6 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 }
 ```
 
-###asset.summary
-
-| 方法名 | 方法类型 | 描述 | 
- | --- | --- | --- |
- | asset.summary | get  | 获取总资产概要，返回平台各种资产的总额 |
-
-请求参数：
-
-| 参数名 | 参数类型 | 描述 |
-| --- | --- | --- |
-| assets | json array  | 资产名称，如：&quot;BTC&quot;,&quot;ETH&quot;等，[]表示请求所有资产名称数据 |
-
-示例：
-
-| url | body |
-| --- | --- |
-| https://api.hotbit.io/api/v1/asset.summary?assets=[&quot;BTC&quot;,&quot;ETH&quot;]  |   |
-
-```
- Response:
- {
-    "error": null,
-    "result": [
-        {
-            "name": "BTC",
-            "total_balance": "2513530477.51917879303",
-            "available_count": 33,
-            "available_balance": "2513414167.80335382403",
-            "freeze_count": 6,
-            "freeze_balance": "116309.715824969"
-        },
-        {
-            "name": "SPHTX",
-            "total_balance": "601388997.97133994",
-            "available_count": 18,
-            "available_balance": "601388308.60133994",
-            "freeze_count": 3,
-            "freeze_balance": "689.37"
-        }
-    ],
-    "id": 1521169086
-}
-```
-
 ##Trade API
 **交易类api**
 
