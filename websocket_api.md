@@ -5,7 +5,7 @@
 API基于websocket的json/rpc。
 
 请求地址：
-websoket访问的根URL：https://ws.hotbit.io
+websoket访问的根URL：wss://ws.hotbit.io
 
 请求：
 
