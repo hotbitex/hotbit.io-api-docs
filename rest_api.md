@@ -120,22 +120,6 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | --- | --- |
 | https://api.hotbit.io/api/v1/balance.query  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"] |
 
-响应数据：
-
-
-| 参数名称 | 数据类型 | 是否必须 | 描述 |
-| --- | --- | --- | --- |
-|  |  | |  |
-
-示例：
-
-```
-Response:
-{
-
-}
-```
-
 
 
 ### balance.history
