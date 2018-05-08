@@ -802,7 +802,7 @@ Response:
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/market.list | |
+| https://api.hotbit.io/api/v1/market.summary | |
 
 
 响应数据：
