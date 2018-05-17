@@ -441,7 +441,7 @@ WebSocket请求分为三部分
 
 | 参数名 | 参数类型 | 必填 | 描述                 |
 | ------ | -------- | ---- | -------------------- |
-| market | String   | 是   | 市场名               |
+| market list | list   | 是   | 市场名列表，如果为空的话，返回所有市场的数据|
 | offset | Integer  | 是   | offset               |
 | limit  | Integer  | 是   | 最大返回数量,小于101 |
 
@@ -451,7 +451,13 @@ WebSocket请求分为三部分
 ```
 { 
     "method":"order.query", 
-    "params":["BTCBCC",0,50], 
+    "params":[["BTCBCC","BTCETH"],0,50], 
+    "id":100
+}
+或
+{
+    "method":"order.query", 
+    "params":[[],0,50], 
     "id":100
 }
 ```
@@ -472,28 +478,36 @@ WebSocket请求分为三部分
 {
     "error": null, 
     "result": {
-        "limit": 100, 
-        "offset": 0, 
-        "total": 3, 
-        "records": [
-        {
-            "id": 8675864,               # 定单ID
-            "market": "ACATETH",         # 市场名称
-            "type": 1,                   # 定单类型 1-限价单 2-市价单
-            "side": 1,                   # 买卖方向 1-ASK 2-Bid
-            "user": 15731,               # 用户ID
-            "ctime": 1524482296.075341,  # 定单创建时间
-            "mtime": 1524482296.075341,  # 定单修改时间
-            "price": "0.00001899",       # 价格
-            "amount": "1",               # 数量
-            "taker_fee": "0",            # taker的费率
-            "maker_fee": "0",            # maker的费率
-            "left": "1",                 # 剩余未成交量
-            "deal_stock": "0e-8",        # 成交量
-            "deal_money": "0e-16",       # 成交金额
-            "deal_fee": "0e-12"},        # 成交费用
-            ...]}, 
-    "id": 13}
+        "ACATETH": {
+            "limit": 100, 
+            "offset": 0, 
+            "total": 3, 
+            "records": [
+                {
+                    "id": 8675864,               # 定单ID
+                    "market": "ACATETH",         # 市场名称
+                    "type": 1,                   # 定单类型 1-限价单 2-市价单
+                    "side": 1,                   # 买卖方向 1-ASK 2-Bid
+                    "user": 15731,               # 用户ID
+                    "ctime": 1524482296.075341,  # 定单创建时间
+                    "mtime": 1524482296.075341,  # 定单修改时间
+                    "price": "0.00001899",       # 价格
+                    "amount": "1",               # 数量
+                    "taker_fee": "0",            # taker的费率
+                    "maker_fee": "0",            # maker的费率
+                    "left": "1",                 # 剩余未成交量
+                    "deal_stock": "0e-8",        # 成交量
+                    "deal_money": "0e-16",       # 成交金额
+                    "deal_fee": "0e-12"          # 成交费用
+                },
+                ...
+            ]
+        }, 
+        ……,
+        "SPHTXBTC":{……}
+    }
+    "id": 13
+}
 ```
 
 ### 用户已完成定单查询
