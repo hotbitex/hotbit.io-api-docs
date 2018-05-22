@@ -406,6 +406,43 @@ Response:
 | --- | --- |
 | https://api.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=ETH/BTC&offset=0&limit=100  |
 
+响应数据：
+
+示例：
+
+```
+{
+    "error":null,
+    "result":{
+        "ETHBTC":{
+            "limit":50,
+            "offset":0,
+            "total":1,
+            "records":[
+                {
+                    "id":8688803,
+                    "market":"ETHBTC",
+                    "source":"web",
+                    "type":1,
+                    "side":2,
+                    "user":15731,
+                    "ctime":1526971722.164765,
+                    "mtime":1526971722.164765,
+                    "price":"0.080003",
+                    "amount":"0.4",
+                    "taker_fee":"0.0025",
+                    "maker_fee":"0",
+                    "left":"0.4",
+                    "deal_stock":"0",
+                    "deal_money":"0",
+                    "deal_fee":"0"
+                }
+            ]
+        }
+    },
+    "id":1526971756
+}
+```
 
 
 ### order.finished
