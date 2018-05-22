@@ -213,7 +213,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/asset.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
 
 
 
@@ -236,7 +236,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/asset.summary  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/order.cancel  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100  |
 
 
 
@@ -259,7 +259,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/asset.summary?api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=100&limit=10 |  |
+| https://api.hotbit.io/api/v1/order.deals?api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=100&limit=10 |  |
 
 响应数据：
 
@@ -404,7 +404,7 @@ Response:
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879emarket=ETH/BTC&offset=0&limit=100  |
+| https://api.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=ETH/BTC&offset=0&limit=100  |
 
 
 
@@ -431,7 +431,7 @@ Response:
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.pending  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879emarket=ETH/BTC&start_time=1511967657&end_time =1512050400&offset=0&limit=100&side=1  |
+| https://api.hotbit.io/api/v1/order.finished  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=ETH/BTC&start_time=1511967657&end_time =1512050400&offset=0&limit=100&side=1  |
 
 
 
