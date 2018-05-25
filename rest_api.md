@@ -244,7 +244,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| order.cancel | get  | 获取订单细节 |
+| order.deals | Post  | 获取订单细节 |
 
 请求参数：
 
@@ -252,14 +252,15 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | --- | --- | --- |
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
-| order_id | Integer  | 要取消交易的id。参看&quot;order.put_market&quot;方法的返回结果。|
+| order_id | Integer  | 交易ID，参看 "order.put_limit"方法的返回结果|
+| offset | Integer  | 等于0，表示从最近一次交易往之前查找 |
 | limit | Integer  | 最多返回 &quot;records&quot;的数量 |
 
 示例：
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.deals?api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=100&limit=10 |  |
+| https://api.hotbit.io/api/v1/order.deals | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=100&limit=10 |
 
 响应数据：
 
