@@ -56,16 +56,16 @@ WebSocket是HTML5一种新的协议(Protocol)。它实现了客户端与服务�
 
 例如：对于如下的参数进行签名   
 
-   	string[] parameters={"api_key":"[api_key]","id": 123,"method": "balance.query","params": [1, "BTC"]};
+   	string[] parameters={"api_key":"api_key_string","id": 123,"method": "balance.query","params": [1, "BTC"]};
    	
 生成待签名的字符串    
 
-	api_key=[api_key]&id=123&method=balance.query&params=1,BTC
+	api_key=api_key_string&id=123&method=balance.query&params=1,BTC
 
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。例如：
 
-	api_key=[api_key]&id=123&method=balance.query&params=1,BTC&secret_key=secretKey    
+	api_key=api_key_string&id=123&method=balance.query&params=1,BTC&secret_key=secretKey    
 
-注意，`&secret_key=secretKey` 为签名必传参数。   
+注意，`&secret_key=secretKey` 为签名必传参数，放在字符串的最后位置。   
 
 最后，是利用32位MD5算法，对最终待签名字符串进行签名运算，从而得到签名结果字符串(该字符串赋值于参数sign)，MD5计算结果中字母全部大写。    
