@@ -358,14 +358,14 @@ Response:
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| limit | Integer |  最多返回 &quot;records&quot;的数量 |
-| interval | string  | 时间间隔 |
+| limit | Integer |  最多返回 &quot;records&quot;的数量，可取值：1, 5, 10, 20, 30, 50, 100 |
+| interval | string  | 价格精度，可取值：0，0.1，0.01，0.001，……，0.0000000001 |
 
 示例：
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.depth?market=ETH/BTC&limit=100&interval=1000  |   |
+| https://api.hotbit.io/api/v1/order.depth?market=ETH/BTC&limit=100&interval=1e-8  |   |
 
 响应数据：
 
@@ -375,12 +375,12 @@ Response:
 ```
 Response:
 {
-    "error": null,
-    "result": {
-        "asks": [],
-        "bids": []
-    },
-    "id": 1521169159
+	"error": null, 
+	"result": 
+		{
+			"asks": [["0.0733858", "0.319"], ["0.0741178", "0.252"], ["0.0742609", "0.03"], ... ["0.1250465", "0.272"]], 
+			"bids": [["0.0730197", "0.275"], ["0.0723", "1.052"], ["0.0722876", "0.302"], ... ["2.0e-7", "1"]]}, 
+	"id": 1527559250
 }
 ```
 
