@@ -98,6 +98,4 @@ to_upper(c88f04701d3349d0a93a0164dc5a4cd9)
 api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&assets=["BTC","ETH"]&sign=C88F04701D3349D0A93A0164DC5A4CD9
 ```
 
-说明：上述API Key和Secret Key仅为示例，在使用的时候替换为用户自己申请的API Key。
-
-注意，密钥是用户重要信息，请勿向他人公开。    
+说明：上述API Key和Secret Key仅为示例，在使用的时候替换为用户自己申请的API Key。    
