@@ -145,7 +145,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/balance.history  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=BTC&business=deposit&start_time=1511967657&end_time =1512050400&offset=0&limit=100 |
+| https://api.hotbit.io/api/v1/balance.history  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&asset=BTC&business=deposit&start_time=1511967657&end_time =1512050400&offset=0&limit=100 |
 
 
 
