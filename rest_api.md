@@ -204,10 +204,10 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | --- | --- | --- |
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
-| market | string  | market名称，如："BTC/USD","BCC/USD" |
+| market | string  | market名称，如："BTC/USDT","ETH/USDT" |
 | side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
-| amount | Integer  | 申请交易的数量 |
-| price | Integer  | 交易价格 |
+| amount | double  | 申请交易的数量 |
+| price | double  | 交易价格 |
 
 示例：
 
@@ -244,7 +244,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| order.deals | Post  | 获取订单细节 |
+| order.deals | post  | 获取已成交的订单细节 |
 
 请求参数：
 
