@@ -304,6 +304,57 @@ Response:
 ```
 
 
+### order.finished_detail
+
+| 方法名 | 方法类型 | 描述 |
+| --- | --- | --- |
+| order.finished_detail | post  | 根据订单号查询已完成订单 |
+
+请求参数：
+
+| 参数名 | 参数类型 | 描述 |
+| --- | --- | --- |
+| api_key | string | 用户API KEY |
+| sign | string | 用户签名值 |
+| order_id | Integer  | 交易ID，参看 "order.put_limit"方法的返回结果|
+
+
+示例：
+
+| url | body |
+| --- | --- |
+| https://api.hotbit.io/api/v1/order.finished_detail | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=1 |
+
+响应数据：
+
+示例：
+
+
+```
+Response:
+{
+    "error": null,
+    "result": {
+        "id": 1,
+        "ctime": 1535545564.4409361,
+        "ftime": 1535545564.525017,
+        "user": 15731,
+        "market": "YCCETH",
+        "source": "test",
+        "type": 1,
+        "side": 2,
+        "price": "0.0000509",
+        "amount": "1",
+        "taker_fee": "0.001",
+        "maker_fee": "0.001",
+        "deal_stock": "1",
+        "deal_money": "0.0000509",
+        "deal_fee": "0.001"
+    },
+    "id": 1536050997
+}
+```
+
 
 ### order.book
 
