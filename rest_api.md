@@ -67,11 +67,11 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 
 
-### system.time
+### server.time
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| system.time | get  | 获取系统时间 |
+| server.time | get  | 获取系统时间 |
 
 请求参数：无
 
@@ -79,7 +79,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/system.time |  |
+| https://api.hotbit.io/api/v1/server.time |  |
 
 响应数据：
 
