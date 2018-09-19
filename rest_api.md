@@ -126,7 +126,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| balance.history | post  | 获取用户资金变动流水 |
+| balance.history | post  | 获取用户资金变动流水 |
 
 请求参数：
 
