@@ -126,7 +126,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| balance.history | post  | 获取用户资产 |
+| balance.history | post  | 获取用户资金变动流水 |
 
 请求参数：
 
@@ -532,7 +532,7 @@ Response:
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| market.list | get  | 获取market列表 |
+| market.list | get  | 获取交易对列表 |
 
 请求参数：无
 
@@ -580,7 +580,7 @@ Response:
 ### market.last
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| market.last | get  | 获取指定market的最新价格 |
+| market.last | get  | 获取指定交易对的最新价格 |
 
 请求参数：
 
@@ -614,7 +614,7 @@ Response:
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| market.last | get  | 查询市场交易记录 |
+| market.last | get  | 查询交易对交易记录 |
 
 请求参数：
 
