@@ -32,8 +32,8 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 ## 函数列表
 
-|函数名|描述|url|参数|
-| :-----    | :-----   | :-----   | :-----   | 
+|函数名|描述|url|
+| :-----    | :-----   | :-----   | 
 |[server.time](#servertime)| 获取系统时间 |https://api.hotbit.io/api/v1/server.time| |
 |[balance.query](#balancequery)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"]|
 |[asset.list](#assetlist)|获取平台所有资产类型和精度，prec为精确到小数点后多少位|https://api.hotbit.io/api/v1/asset.list| |
