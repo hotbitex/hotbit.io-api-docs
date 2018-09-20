@@ -30,6 +30,30 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |params|参数|
 
 
+## 函数列表
+
+|函数名|描述|url|参数|
+| :-----    | :-----   | :-----   | :-----   | 
+|[server.time](#server.time)| 获取系统时间 |https://api.hotbit.io/api/v1/server.time| |
+|[balance.query](#balance.query)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"]|
+|[asset.list](#asset.list)|获取平台所有资产类型和精度，prec为精确到小数点后多少位|https://api.hotbit.io/api/v1/asset.list| |
+|[order.put_limit](#order.put_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100 |
+|[order.cancel](#order.cancel)|取消交易|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=BTC/ETH&side=1&amount=10&price=100|
+|[order.deals](#order.deals)|获取已成交的订单细节|https://api.hotbit.io/api/v1/order.deals| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=100&limit=10|
+|[order.finished_detail](#order.finished_detail)|根据订单号查询已完成订单|https://api.hotbit.io/api/v1/order.finished_detail| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&order_id=1|
+|[order.book](#order.book)|获取交易列表|https://api.hotbit.io/api/v1/order.book|market=ETH/BTC&side=1&offset=0&limit=10 |
+|[order.depth](#order.depth)|获取交易深度|https://api.hotbit.io/api/v1/order.depth|market=ETH/BTC&limit=100&interval=1e-8 |
+|[order.pending](#order.pending)|查询未实施订单|https://api.hotbit.io/api/v1/order.pending| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=ETH/BTC&offset=0&limit=100|
+|[order.finished](#order.finished)|查询用户的已完成订单|https://api.hotbit.io/api/v1/order.finished|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&market=ETH/BTC&start_time=1511967657&end_time =1512050400&offset=0&limit=100&side=1 |
+|[market.list](#market.list)|获取交易对列表|https://api.hotbit.io/api/v1/market.list| |
+|[market.last](#market.last)|获取指定交易对的最新价格|https://api.hotbit.io/api/v1/market.last| market=ETH/BTC|
+|[market.deals](#market.deals)|查询交易对交易记录|https://api.hotbit.io/api/v1/market.deals| market=ETH/BTC&limit=10&last_id=1521100930|
+|[market.user_deals](#market.user_deals)|查询用户交易记录|https://api.hotbit.io/api/v1/user_deals| |
+|[market.kline](#market.kline)|k线查询|https://api.hotbit.io/api/v1/market.kline|market=ETH/BTC&start_time=1521100000&end_time=1521101193&interval=60 |
+|[market.status](#market.status)|获取过去指定时间段market当前最新涨跌幅，交易量，最高/最低价格等状态|https://api.hotbit.io/api/v1/market.status|market=ETH/BTC&period=10 |
+|[market.status_today](#market.status_today)|获取今天market状态|https://api.hotbit.io/api/v1/market.status_today|market=ETH/BTC |
+|[market.status24h](#market.status24h)|获取过去24小时内的market涨跌幅，交易量，最高/最低价格等状态|https://api.hotbit.io/api/v1/market.status24h||
+|[market.summary](#market.summary)|market概要|https://api.hotbit.io/api/v1/market.summary||
 
 ## 应答
 应答位于"200 ok"的body部分，共有三个参数组成：
@@ -614,7 +638,7 @@ Response:
 
 | 方法名 | 方法类型 | 描述 |
 | --- | --- | --- |
-| market.last | get  | 查询交易对交易记录 |
+| market.deals | get  | 查询交易对交易记录 |
 
 请求参数：
 
