@@ -54,6 +54,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |[market.status_today](#marketstatus_today)|获取今天market状态|https://api.hotbit.io/api/v1/market.status_today|market=ETH/BTC |
 |[market.status24h](#marketstatus24h)|获取过去24小时内的market涨跌幅，交易量，最高/最低价格等状态|https://api.hotbit.io/api/v1/market.status24h||
 |[market.summary](#marketsummary)|market概要|https://api.hotbit.io/api/v1/market.summary||
+|[allticker](#allticker)|获取全市场交易对的最新成交信息|https://api.hotbit.io/api/v1/allticker||
 
 ## 应答
 应答位于"200 ok"的body部分，共有三个参数组成：
