@@ -1275,7 +1275,7 @@ WebSocket请求分为三部分
 ```
 { 
     "method": "asset.update", 
-    "result": { 
+    "params": { 
         "ETH": { "available": "0", "freeze": "0" }, 
         "BTC": { "available": "0", "freeze": "0" } 
     }, 
