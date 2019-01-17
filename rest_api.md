@@ -239,7 +239,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTCH&side=1&amount=10&price=100  |
 响应数据：
 
 示例：
@@ -281,7 +281,7 @@ Response:
 		   "code":103
 		   "message":"market not exist"
 		}
-	  	"result": {},
+	  	"result": null,
 	         "id": 1521169460
         },
     "id": 1521169460
@@ -351,7 +351,7 @@ Response:
 		   "code":10
 		   "message":"order not found"
 		}
-	  	"result": {},
+	  	"result":null,
 	         "id": 1521169460
         },
     "id": 1521169460
@@ -413,7 +413,7 @@ Response:
 		   "code":10
 		   "message":"order not found"
 		}
-	  	"result": {},
+	  	"result":null,
 	         "id": 1521169460
             }
         ],
