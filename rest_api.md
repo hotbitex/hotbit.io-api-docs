@@ -38,9 +38,10 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |[balance.query](#balancequery)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&assets=["BTC","ETH"]|
 |[asset.list](#assetlist)|获取平台所有资产类型和精度，prec为精确到小数点后多少位|https://api.hotbit.io/api/v1/asset.list| |
 |[order.put_limit](#orderput_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&side=1&amount=10&price=100 |
-|[order.cancel](#ordercancel)|取消交易|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100|
+|[order.cancel](#ordercancel)|取消交易|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&order_id=1|
+|[order.batch_cancel](#orderbatch_cancel)|批量取消交易|https://api.hotbit.io/api/v1/order.batch_cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&orders_id=[1,2]|
 |[order.deals](#orderdeals)|获取已成交的订单细节|https://api.hotbit.io/api/v1/order.deals| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10|
-|[order.finished_detail](#order.finished_detail)|根据订单号查询已完成订单|https://api.hotbit.io/api/v1/order.finished_detail| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=1|
+|[order.finished_detail](#orderfinished_detail)|根据订单号查询已完成订单|https://api.hotbit.io/api/v1/order.finished_detail| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=1|
 |[order.book](#orderbook)|获取交易列表|https://api.hotbit.io/api/v1/order.book|market=ETH/BTC&side=1&offset=0&limit=10 |
 |[order.depth](#orderdepth)|获取交易深度|https://api.hotbit.io/api/v1/order.depth|market=ETH/BTC&limit=100&interval=1e-8 |
 |[order.pending](#orderpending)|查询未实施订单|https://api.hotbit.io/api/v1/order.pending| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&offset=0&limit=100|
@@ -239,7 +240,53 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | url | body |
 | --- | --- |
 | https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100  |
+响应数据：
 
+示例：
+
+
+```
+#正确反馈
+Response:
+{
+    "error": null,
+    "result": 
+	 {
+	   "id":8688803,    #order-ID
+	    "market":"ETHBTC",
+	    "source":"web",    #数据请求来源标识
+	    "type":1,	       #下单类型 1-限价单
+	    "side":2,	       #买卖方标识 1-卖方，2-买方
+	    "user":15731,
+	    "ctime":1526971722.164765, #订单创建时间
+	    "mtime":1526971722.164765, #订单更新时间
+	    "price":"0.080003",
+	    "amount":"0.4",
+	    "taker_fee":"0.0025",
+	    "maker_fee":"0",
+	    "left":"0.4",
+	    "deal_stock":"0",
+	    "deal_money":"0",
+	    "deal_fee":"0"
+        },
+    "id": 1521169460
+}
+#发生错误反馈
+Response:
+{
+    "error": null,
+    "result": 
+	{	
+                "error": {	
+		   "code":103
+		   "message":"market not exist"
+		}
+	  	"result": {},
+	         "id": 1521169460
+        },
+    "id": 1521169460
+}
+```
 
 
 ### order.cancel
@@ -255,15 +302,124 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| order_id | Integer  | 要取消交易的id。参看&quot;order.put_market&quot;方法的返回结果。|
+| order_id | Integer  | 要取消交易的id。参看&quot;order.put_limit&quot;方法的返回结果。|
 
 示例：
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.cancel  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/order.cancel  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&order_id=1  |
+
+响应数据：
+
+示例：
 
 
+```
+#正确反馈
+Response:
+{
+    "error": null,
+    "result": 
+	 {
+	   "id":8688803,    #order-ID
+	    "market":"ETHBTC",
+	    "source":"web",    #数据请求来源标识
+	    "type":1,	       #下单类型 1-限价单
+	    "side":2,	       #买卖方标识 1-卖方，2-买方
+	    "user":15731,
+	    "ctime":1526971722.164765, #订单创建时间
+	    "mtime":1526971722.164765, #订单更新时间
+	    "price":"0.080003",
+	    "amount":"0.4",
+	    "taker_fee":"0.0025",
+	    "maker_fee":"0",
+	    "left":"0.4",
+	    "deal_stock":"0",
+	    "deal_money":"0",
+	    "deal_fee":"0"
+        },
+    "id": 1521169460
+}
+#发生错误反馈
+Response:
+{
+    "error": null,
+    "result": 
+	{	
+                "error": {	
+		   "code":10
+		   "message":"order not found"
+		}
+	  	"result": {},
+	         "id": 1521169460
+        },
+    "id": 1521169460
+}
+```
+
+### order.batch_cancel
+
+| 方法名 | 方法类型 | 描述 |
+| --- | --- | --- |
+| order.batch_cancel | post  | 批量取消交易 |
+
+请求参数：
+
+| 参数名 | 参数类型 | 描述 |
+| --- | --- | --- |
+| api_key | string | 用户API KEY |
+| sign | string | 用户签名值 |
+| market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
+| orders_id | arrary  | 要取消交易的id,数量最多10个订单取消，参看&quot;order.put_limit&quot;方法的返回结果。|
+
+示例：
+
+| url | body |
+| --- | --- |
+| https://api.hotbit.io/api/v1/order.batch_cancel  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&orders_id=[1,2]  |
+
+响应数据：
+
+示例：
+
+
+```
+Response:
+{
+    "error": null,
+    "result": 
+	 [
+            {#正确反馈
+                   "id":8688803,    #order-ID
+                    "market":"ETHBTC",
+                    "source":"web",    #数据请求来源标识
+                    "type":1,	       #下单类型 1-限价单
+                    "side":2,	       #买卖方标识 1-卖方，2-买方
+                    "user":15731,
+                    "ctime":1526971722.164765, #订单创建时间
+                    "mtime":1526971722.164765, #订单更新时间
+                    "price":"0.080003",
+                    "amount":"0.4",
+                    "taker_fee":"0.0025",
+                    "maker_fee":"0",
+                    "left":"0.4",
+                    "deal_stock":"0",
+                    "deal_money":"0",
+                    "deal_fee":"0"
+            },
+            {	#发生错误反馈
+                "error": {	
+		   "code":10
+		   "message":"order not found"
+		}
+	  	"result": {},
+	         "id": 1521169460
+            }
+        ],
+    "id": 1521169460
+}
+```
 
 ### order.deals
 
