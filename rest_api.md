@@ -35,7 +35,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |函数名|描述|url|
 | :-----    | :-----   | :-----   | 
 |[server.time](#servertime)| 获取系统时间 |https://api.hotbit.io/api/v1/server.time| |
-|[balance.query](#balancequery)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"]|
+|[balance.query](#balancequery)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&assets=["BTC","ETH"]|
 |[asset.list](#assetlist)|获取平台所有资产类型和精度，prec为精确到小数点后多少位|https://api.hotbit.io/api/v1/asset.list| |
 |[order.put_limit](#orderput_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100 |
 |[order.cancel](#ordercancel)|取消交易|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100|
