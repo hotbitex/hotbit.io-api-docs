@@ -37,7 +37,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |[server.time](#servertime)| 获取系统时间 |https://api.hotbit.io/api/v1/server.time| |
 |[balance.query](#balancequery)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&assets=["BTC","ETH"]|
 |[asset.list](#assetlist)|获取平台所有资产类型和精度，prec为精确到小数点后多少位|https://api.hotbit.io/api/v1/asset.list| |
-|[order.put_limit](#orderput_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100 |
+|[order.put_limit](#orderput_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&side=1&amount=10&price=100 |
 |[order.cancel](#ordercancel)|取消交易|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&side=1&amount=10&price=100|
 |[order.deals](#orderdeals)|获取已成交的订单细节|https://api.hotbit.io/api/v1/order.deals| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10|
 |[order.finished_detail](#order.finished_detail)|根据订单号查询已完成订单|https://api.hotbit.io/api/v1/order.finished_detail| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=1|
@@ -497,14 +497,14 @@ Response:
             "total":1,
             "records":[
                 {
-                    "id":8688803,
+                    "id":8688803,    #order-ID
                     "market":"ETHBTC",
-                    "source":"web",
-                    "type":1,
-                    "side":2,
+                    "source":"web",    #数据请求来源标识
+                    "type":1,	       #下单类型 1-限价单
+                    "side":2,	       #买卖方标识 1-卖方，2-买方
                     "user":15731,
-                    "ctime":1526971722.164765,
-                    "mtime":1526971722.164765,
+                    "ctime":1526971722.164765, #订单创建时间
+                    "mtime":1526971722.164765, #订单更新时间
                     "price":"0.080003",
                     "amount":"0.4",
                     "taker_fee":"0.0025",
@@ -581,10 +581,10 @@ Response:
             "name": "QASHBTC",
             "stock": "QASH",
             "money": "BTC",
-            "fee_prec": 4,
-            "stock_prec": 2,
-            "money_prec": 8,
-            "min_amount": "0.1"
+            "fee_prec": 4,  #税率精度4位小数
+            "stock_prec": 2, #stock精度
+            "money_prec": 8, #money精度
+            "min_amount": "0.1" #下单最小值
         },
         {
             "name": "QASHETH",
