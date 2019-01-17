@@ -246,7 +246,6 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 
 ```
-#正确反馈
 Response:
 {
     "error": null,
@@ -268,21 +267,6 @@ Response:
 	    "deal_stock":"0",
 	    "deal_money":"0",
 	    "deal_fee":"0"
-        },
-    "id": 1521169460
-}
-#发生错误反馈
-Response:
-{
-    "error": null,
-    "result": 
-	{	
-                "error": {	
-		   "code":103
-		   "message":"market not exist"
-		}
-	  	"result": null,
-	         "id": 1521169460
         },
     "id": 1521169460
 }
@@ -316,7 +300,6 @@ Response:
 
 
 ```
-#正确反馈
 Response:
 {
     "error": null,
@@ -338,21 +321,6 @@ Response:
 	    "deal_stock":"0",
 	    "deal_money":"0",
 	    "deal_fee":"0"
-        },
-    "id": 1521169460
-}
-#发生错误反馈
-Response:
-{
-    "error": null,
-    "result": 
-	{	
-                "error": {	
-		   "code":10
-		   "message":"order not found"
-		}
-	  	"result":null,
-	         "id": 1521169460
         },
     "id": 1521169460
 }
