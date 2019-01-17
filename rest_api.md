@@ -143,7 +143,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/balance.query  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=fdcafaf85a38970e4d84f6f286a2879e&assets=["BTC","ETH"] |
+| https://api.hotbit.io/api/v1/balance.query  | api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&assets=["BTC","ETH"] |
 
 
 
