@@ -232,7 +232,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | sign | string | 用户签名值 |
 | market | string  | market名称，如："BTC/USDT","ETH/USDT" |
 | side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
-| amount | double  | 申请交易的数量 |
+| amount | double  | 申请交易的数量 (**注意必须是最小量的倍数**)|
 | price | double  | 交易价格 |
 
 示例：
