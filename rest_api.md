@@ -266,7 +266,8 @@ Response:
 	    "left":"0.4",
 	    "deal_stock":"0",
 	    "deal_money":"0",
-	    "deal_fee":"0"
+	    "deal_fee":"0",
+	    "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
         },
     "id": 1521169460
 }
@@ -320,7 +321,8 @@ Response:
 	    "left":"0.4",
 	    "deal_stock":"0",
 	    "deal_money":"0",
-	    "deal_fee":"0"
+	    "deal_fee":"0",
+	     "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
         },
     "id": 1521169460
 }
@@ -374,7 +376,8 @@ Response:
                     "left":"0.4",
                     "deal_stock":"0",
                     "deal_money":"0",
-                    "deal_fee":"0"
+                    "deal_fee":"0",
+		     "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
             },
             {	#发生错误反馈
                 "error": {	
@@ -498,7 +501,8 @@ Response:
         "maker_fee": "0.001",
         "deal_stock": "1",
         "deal_money": "0.0000509",
-        "deal_fee": "0.001"
+        "deal_fee": "0.001",
+	 "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
     },
     "id": 1536050997
 }
@@ -636,7 +640,8 @@ Response:
                     "left":"0.4",
                     "deal_stock":"0",
                     "deal_money":"0",
-                    "deal_fee":"0"
+                    "deal_fee":"0",
+		     "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
                 }
             ]
         }
