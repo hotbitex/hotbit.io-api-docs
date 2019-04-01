@@ -235,6 +235,8 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | amount | double  | 申请交易的数量 (**注意必须是最小量的倍数**)|
 | price | double  | 交易价格 |
 
+**同一交易对下面只能同时存在200个挂单**
+
 示例：
 
 | url | body |
