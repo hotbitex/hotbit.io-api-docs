@@ -162,8 +162,8 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | sign | string | 用户签名值 |
 | asset | string | 资产名称，如：&quot;BTC&quot;,&quot;ETH&quot;等，&quot;&quot;表示所有资产名称 |
 | business | string | 业务名称，如：&quot;deposit&quot;或&quot;trade&quot;，&quot;&quot;表示所有业务名称 |
-| start_time | Integer | 开始时间 |
-| end_time | Integer | 截止时间 |
+| start_time | Integer | 开始时间(秒) |
+| end_time | Integer | 截止时间(秒) |
 | offset | Integer | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推 |
 | limit | Integer | 返回的最大交易笔数 |
 
@@ -259,8 +259,8 @@ Response:
 	    "type":1,	       #下单类型 1-限价单
 	    "side":2,	       #买卖方标识 1-卖方，2-买方
 	    "user":15731,
-	    "ctime":1526971722.164765, #订单创建时间
-	    "mtime":1526971722.164765, #订单更新时间
+	    "ctime":1526971722.164765, #订单创建时间(秒)
+	    "mtime":1526971722.164765, #订单更新时间(秒)
 	    "price":"0.080003",
 	    "amount":"0.4",
 	    "taker_fee":"0.0025",
@@ -314,8 +314,8 @@ Response:
 	    "type":1,	       #下单类型 1-限价单
 	    "side":2,	       #买卖方标识 1-卖方，2-买方
 	    "user":15731,
-	    "ctime":1526971722.164765, #订单创建时间
-	    "mtime":1526971722.164765, #订单更新时间
+	    "ctime":1526971722.164765, #订单创建时间(秒)
+	    "mtime":1526971722.164765, #订单更新时间(秒)
 	    "price":"0.080003",
 	    "amount":"0.4",
 	    "taker_fee":"0.0025",
@@ -369,8 +369,8 @@ Response:
                     "type":1,	       #下单类型 1-限价单
                     "side":2,	       #买卖方标识 1-卖方，2-买方
                     "user":15731,
-                    "ctime":1526971722.164765, #订单创建时间
-                    "mtime":1526971722.164765, #订单更新时间
+                    "ctime":1526971722.164765, #订单创建时间(秒)
+                    "mtime":1526971722.164765, #订单更新时间(秒)
                     "price":"0.080003",
                     "amount":"0.4",
                     "taker_fee":"0.0025",
@@ -441,7 +441,7 @@ Response:
                 "deal_order_id": 2337658
             },
             {
-                "time": 1521107410.357024,
+                "time": 1521107410.357024,#(秒)
                 "user": 15643,
                 "id": 1385151,
                 "role": 1,
@@ -490,8 +490,8 @@ Response:
     "error": null,
     "result": {
         "id": 1,
-        "ctime": 1535545564.4409361,
-        "ftime": 1535545564.525017,
+        "ctime": 1535545564.4409361,#(秒)
+        "ftime": 1535545564.525017,#(秒)
         "user": 15731,
         "market": "YCCETH",
         "source": "test",
@@ -666,8 +666,8 @@ Response:
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| start_time | Integer | 开始时间 |
-| end_time | Integer | 截止时间 |
+| start_time | Integer | 开始时间(秒) |
+| end_time | Integer | 截止时间(秒) |
 | offset | Integer | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推 |
 | limit | Integer  | 最多返回 &quot;records&quot;的数量 |
 | side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
@@ -836,8 +836,8 @@ Response:
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| start_time | Integer  | 起始时间戳  |
-| end_time | Integer  | 结束时间戳  |
+| start_time | Integer  | 起始时间戳(秒)  |
+| end_time | Integer  | 结束时间戳(秒)  |
 | Interval | Integer   | 周期间隔,单位秒, (起始时间到结束时间，总周期数) < 1000 |
 
 示例：
