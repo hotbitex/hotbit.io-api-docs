@@ -776,8 +776,6 @@ Response:
 
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
-| api_key | string | 用户API KEY |
-| sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
 | limit | Integer  | 查询个数限制(limit <= 1000) |
 | last_id | Integer  | 返回大于order_id > last_id的交易数据 |
