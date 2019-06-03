@@ -234,6 +234,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
 | amount | double  | 申请交易的数量 (**注意必须是最小量的倍数**)|
 | price | double  | 交易价格 |
+| isfee | Integer  | 是否使用折扣币抵扣 0 = &quot;否(no)&quot;，1=&quot;是(yes)&quot;|
 
 **同一交易对下面只能同时存在200个挂单**
 
@@ -269,7 +270,10 @@ Response:
 	    "deal_stock":"0",
 	    "deal_money":"0",
 	    "deal_fee":"0",
-	    "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
+	    "status":0    , #订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的
+	    "fee_stock":"HTB",	#抵扣币名
+	    "alt_fee":"0.5",	#抵扣币的折扣
+	    "deal_fee_alt":"0.123" #折扣抵扣的数量
         },
     "id": 1521169460
 }
@@ -324,7 +328,10 @@ Response:
 	    "deal_stock":"0",
 	    "deal_money":"0",
 	    "deal_fee":"0",
-	     "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
+	    "status":0    , #订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的
+	    "fee_stock":"HTB",	#抵扣币名
+	    "alt_fee":"0.5",	#抵扣币的折扣
+	    "deal_fee_alt":"0.123" #折扣抵扣的数量
         },
     "id": 1521169460
 }
@@ -379,7 +386,10 @@ Response:
                     "deal_stock":"0",
                     "deal_money":"0",
                     "deal_fee":"0",
-		     "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
+		    "status":0    , #订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的
+		    "fee_stock":"HTB",	#抵扣币名
+	 	    "alt_fee":"0.5",	#抵扣币的折扣
+	            "deal_fee_alt":"0.123" #折扣抵扣的数量
             },
             {	#发生错误反馈
                 "error": {	
@@ -504,7 +514,10 @@ Response:
         "deal_stock": "1",
         "deal_money": "0.0000509",
         "deal_fee": "0.001",
-	 "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
+	"status":0    , #订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的
+   	"fee_stock":"HTB",	#抵扣币名
+   	"alt_fee":"0.5",	#抵扣币的折扣
+   	"deal_fee_alt":"0.123" #折扣抵扣的数量
     },
     "id": 1536050997
 }
@@ -643,7 +656,10 @@ Response:
                     "deal_stock":"0",
                     "deal_money":"0",
                     "deal_fee":"0",
-		     "status":0     #订单状态标志 当与0x8为真的时候表示当前订单是取消的
+		    "status":0    , #订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的
+		    "fee_stock":"HTB",	#抵扣币名
+	 	    "alt_fee":"0.5",	#抵扣币的折扣
+	            "deal_fee_alt":"0.123" #折扣抵扣的数量
                 }
             ]
         }
