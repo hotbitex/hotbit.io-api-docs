@@ -37,7 +37,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |[server.time](#servertime)| 获取系统时间 |https://api.hotbit.io/api/v1/server.time| |
 |[balance.query](#balancequery)| 获取用户资产 |https://api.hotbit.io/api/v1/balance.query| api_key=5eae7322-6f92-873a-9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&assets=["BTC","ETH"]|
 |[asset.list](#assetlist)|获取平台所有资产类型和精度，prec为精确到小数点后多少位|https://api.hotbit.io/api/v1/asset.list| |
-|[order.put_limit](#orderput_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&side=1&amount=10&price=100 |
+|[order.put_limit](#orderput_limit)|限价交易|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&side=1&amount=10&price=100&isfee=0 |
 |[order.cancel](#ordercancel)|取消交易|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&order_id=1|
 |[order.batch_cancel](#orderbatch_cancel)|批量取消交易|https://api.hotbit.io/api/v1/order.batch_cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&orders_id=[1,2]|
 |[order.deals](#orderdeals)|获取已成交的订单细节|https://api.hotbit.io/api/v1/order.deals| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10|
@@ -242,7 +242,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTCH&side=1&amount=10&price=100  |
+| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTCH&side=1&amount=10&price=100&isfee=0  |
 响应数据：
 
 示例：
