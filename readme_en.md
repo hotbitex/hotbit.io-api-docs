@@ -43,7 +43,7 @@ WebSocket is a new type of HTML5 protocol. WebSocket enables the full-duplex com
 
 **_Attention:The feedback data of websocket is compressed by the compression algorithm of zlib._**
 
-强烈建议开发者使用WebSocket API获取市场行情和买卖深度等信息。   The developers are strongly recommended to obtain relevant information such as market trends and the depth of buy and sell transactions by adopting WebSocket API
+The developers are strongly recommended to obtain relevant information such as market trends and the depth of buy and sell transactions by adopting WebSocket API
 
 ## Enable API Permission
 
