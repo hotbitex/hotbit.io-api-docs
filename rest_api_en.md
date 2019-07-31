@@ -820,6 +820,8 @@ requested parameter：
 
 | name of parameter | type of parameter | description |
 | --- | --- | --- |
+| api_key | string | user's API KEY |
+| sign | string | user's signature value |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
 | offset | Integer  | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of all orders that meet the requirements from the second most recent order to the earliest order cannot be greater than limit; and so on.....|
 | limit | Integer   | Check limit in number(limit <= 1000) |
@@ -828,7 +830,7 @@ Example：
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/user_deals | |
+| https://api.hotbit.io/api/v1/market.user_deals | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&offset=0&limit=100|
 
 
 ### market.kline
