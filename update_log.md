@@ -26,3 +26,7 @@ alt_fee:抵扣币的优惠折扣
 deal_fee_alt:已经抵扣的抵扣币
 
 修改了status字段状态，增加了与0x80取真的判断代表是否使用了抵扣币，（status&0x80）TRUE-使用了抵扣币，FALSE-未使用抵扣币
+
+2019.7.31
+
+更正market.user_deals接口的错误
