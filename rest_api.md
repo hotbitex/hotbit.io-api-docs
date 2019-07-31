@@ -49,7 +49,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 |[market.list](#marketlist)|获取交易对列表|https://api.hotbit.io/api/v1/market.list| |
 |[market.last](#marketlast)|获取指定交易对的最新价格|https://api.hotbit.io/api/v1/market.last| market=ETH/BTC|
 |[market.deals](#marketdeals)|查询交易对交易记录|https://api.hotbit.io/api/v1/market.deals| market=ETH/BTC&limit=10&last_id=1521100930|
-|[market.user_deals](#marketuser_deals)|查询用户交易记录|https://api.hotbit.io/api/v1/user_deals| |
+|[market.user_deals](#marketuser_deals)|查询用户交易记录|https://api.hotbit.io/api/v1/market.user_deals| |
 |[market.kline](#marketkline)|k线查询|https://api.hotbit.io/api/v1/market.kline|market=ETH/BTC&start_time=1521100000&end_time=1521101193&interval=60 |
 |[market.status](#marketstatus)|获取过去指定时间段market当前最新涨跌幅，交易量，最高/最低价格等状态|https://api.hotbit.io/api/v1/market.status|market=ETH/BTC&period=10 |
 |[market.status_today](#marketstatus_today)|获取今天market状态|https://api.hotbit.io/api/v1/market.status_today|market=ETH/BTC |
@@ -828,6 +828,8 @@ Response:
 
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
+| api_key | string | 用户API KEY |
+| sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
 | offset | Integer  |偏移位置，如果设置为0，表示从最新一个订单开始算起，往之前时间的所有交易记录，总笔数不能大于limit；如果设置为1，表示从次新一个订单开始算起，往之前时间的所有满足条件订单记录，总数不能大于limit；以此类推..... |
 | limit | Integer   | 查询个数限制(limit <= 1000) |
@@ -836,7 +838,7 @@ Response:
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/user_deals | |
+| https://api.hotbit.io/api/v1/market.user_deals |api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&offset=0&limit=100 |
 
 
 ### market.kline
