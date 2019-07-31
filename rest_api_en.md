@@ -47,7 +47,7 @@ Description of Interaction Request
 |[market.list](#marketlist)|Obtain the list of transaction pairs|https://api.hotbit.io/api/v1/market.list| |
 |[market.last](#marketlast)|Obtain the latest price of designated transaction pair|https://api.hotbit.io/api/v1/market.last| market=ETH/BTC|
 |[market.deals](#marketdeals)|Check the transaction records of the transaction pair|https://api.hotbit.io/api/v1/market.deals| market=ETH/BTC&limit=10&last_id=1521100930|
-|[market.user_deals](#marketuser_deals)|Check the user's transaction records|https://api.hotbit.io/api/v1/user_deals| |
+|[market.user_deals](#marketuser_deals)|Check the user's transaction records|https://api.hotbit.io/api/v1/market.user_deals|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&offset=0&limit=100 |
 |[market.kline](#marketkline)|Check K Chart|https://api.hotbit.io/api/v1/market.kline|market=ETH/BTC&start_time=1521100000&end_time=1521101193&interval=60 |
 |[market.status](#marketstatus)|Obtain latest market status within designated period in the past, such as latest range of increase and decline, transaction volume, highest/lowest price etc.|https://api.hotbit.io/api/v1/market.status|market=ETH/BTC&period=10 |
 |[market.status_today](#marketstatus_today)|Obtain today's market status|https://api.hotbit.io/api/v1/market.status_today|market=ETH/BTC |
