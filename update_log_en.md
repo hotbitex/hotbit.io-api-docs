@@ -24,3 +24,7 @@ alt\_fee:The discount of deductable token
 deal\_fee\_alt:The deductable tokens that are already deducted
 
 Modified the status of status field, added the judgment of &0x80 to determine whether deductable tokens are used or not, （status&0x80）TRUE-deductable tokens are used, FALSE-deductable tokens are not used
+
+2019.7.31
+
+Correct the interface of market.user\_deals 
