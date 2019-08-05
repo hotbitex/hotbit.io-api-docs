@@ -242,7 +242,7 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTCH&side=1&amount=10&price=100&isfee=0  |
+| https://api.hotbit.io/api/v1/order.put_limit  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&side=1&amount=10&price=100&isfee=0  |
 响应数据：
 
 示例：
@@ -299,7 +299,7 @@ Response:
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.cancel  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTCH&order_id=1  |
+| https://api.hotbit.io/api/v1/order.cancel  | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&order_id=1  |
 
 响应数据：
 
