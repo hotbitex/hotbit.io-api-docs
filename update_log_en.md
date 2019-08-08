@@ -28,3 +28,6 @@ Modified the status of status field, added the judgment of &0x80 to determine wh
 2019.7.31
 
 Correct the interface of market.user\_deals 
+
+2019.8.8
+add depths.subscribe interface for the bulk subscription of order depth and avoid the establishment of the listening of multiple sockets
