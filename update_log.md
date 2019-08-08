@@ -30,3 +30,7 @@ deal_fee_alt:已经抵扣的抵扣币
 2019.7.31
 
 更正market.user_deals接口的错误
+
+2019.8.8
+
+增加depths.subscribe接口，用于批量订单深度订阅，避免建立多个socket监听
