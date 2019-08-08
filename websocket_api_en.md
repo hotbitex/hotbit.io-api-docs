@@ -1085,6 +1085,50 @@ response
 }
 ```
 
+#### Subscription on Orders Depth
+
+- method: depths.subscribe
+- params: 
+
+request parameter：
+
+```
+"params":[
+ [ 
+    "ETCBTC",  # market name 
+    100,       # order price,value：1, 5, 10, 20, 30, 50, 100 
+    "0.0001"   #  the precision of price range, value："0","0.00000001","0.0000001","0.000001","0.00001", 
+               # "0.0001", "0.001", "0.01", "0.1"
+ ],[ 
+    "BTCBCC",  # market name 
+    100,       # order price,value：1, 5, 10, 20, 30, 50, 100 
+    "0.0001"   #  the precision of price range, value："0","0.00000001","0.0000001","0.000001","0.00001", 
+               # "0.0001", "0.001", "0.01", "0.1"
+ ]
+]
+```
+
+request
+
+```
+{
+    "method":"depths.subscribe", 
+    "params":[["ETCUSDT",100,"0.1"],["EOSUSDT",100,"0.1"]], 
+    "id":100
+}
+```
+
+response
+
+```
+{
+    "error": null, 
+    "result": { "status": "success" }, 
+    "id": 100
+}
+```
+
+
 ### The Push of Order Depth Data
 
 - method: depth.update
