@@ -38,7 +38,7 @@ Description of Interaction Request
 |[order.put_limit](#orderput_limit)|Limit Order Transaction|https://api.hotbit.io/api/v1/order.put_limit|api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=ETH/BTC&side=1&amount=10&price=100&isfee=0 |
 |[order.cancel](#ordercancel)|Cancel Transaction|https://api.hotbit.io/api/v1/order.cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&order_id=1|
 |[order.batch_cancel](#orderbatch_cancel)|Cancel transactions in large quantities|https://api.hotbit.io/api/v1/order.batch_cancel| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&market=BTC/ETH&orders_id=[1,2]|
-|[order.deals](#orderdeals)|Obtain the details of settled orders|https://api.hotbit.io/api/v1/order.deals| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10|
+|[order.deals](#orderdeals)|Obtain the details of settled orders|https://api.hotbit.io/api/v1/order.deals| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10&offset=0|
 |[order.finished_detail](#orderfinished_detail)|Check finished order according to order number|https://api.hotbit.io/api/v1/order.finished_detail| api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=1|
 |[order.book](#orderbook)|Obtain Transaction List|https://api.hotbit.io/api/v1/order.book|market=ETH/BTC&side=1&offset=0&limit=10 |
 |[order.depth](#orderdepth)|Obtain Transaction Depth|https://api.hotbit.io/api/v1/order.depth|market=ETH/BTC&limit=100&interval=1e-8 |
@@ -418,7 +418,7 @@ Example:
 
 | url | body |
 | --- | --- |
-| https://api.hotbit.io/api/v1/order.deals | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10 |
+| https://api.hotbit.io/api/v1/order.deals | api_key=5eae7322-6f92-873a-e9bc214fd61517ec&sign=FDCAFAF85A38970E4D84F6F286A2879E&order_id=100&limit=10&offset=0 |
 
 Data responded:
 
