@@ -159,9 +159,9 @@ Requested Parameter:
 | sign | string | User's signature value |
 | asset | string | Asset name, such as: &quot;BTC&quot;,&quot;ETH&quot;，&quot;&quot;means the names of all assets |
 | business | string | Business name, such as：&quot;deposit&quot;or&quot;trade&quot;，&quot;&quot;means all business names |
-| start_time | Integer | Start time(second) |
-| end_time | Integer | End Time(second) |
-| offset | Integer | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on |
+| start_time | Integer(unsigned 64bit) | Start time(second) |
+| end_time | Integer(unsigned 64bit) | End Time(second) |
+| offset | Integer(32bit) | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on |
 | limit | Integer | Maximum number of transactions returned |
 
 Example:
@@ -228,10 +228,10 @@ Requested Parameter:
 | api_key | string | User's API KEY |
 | sign | string | User's signature value |
 | market | string  | market name，such as："BTC/USDT","ETH/USDT" |
-| side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
-| amount | double  | Amount of tokens applied for trading (**Note that the amount must be the multiple of minimum amount**)|
-| price | double  | Trading price |
-| isfee | Integer  | Use deductable token to deduct or not 0 = &quot;no(no)&quot;，1=&quot;yes(yes)&quot;|
+| side | Integer(32bit)  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
+| amount | string  | Amount of tokens applied for trading (**Note that the amount must be the multiple of minimum amount**)|
+| price | string  | Trading price |
+| isfee | Integer(32bit)  | Use deductable token to deduct or not 0 = &quot;no(no)&quot;，1=&quot;yes(yes)&quot;|
 
 **Only 200 orders are allowed to be placed simultaneously under the same transaction pair**
 
@@ -289,7 +289,7 @@ Parameter Requested:
 | api_key | string | User's API KEY |
 | sign | string | User's signature value |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| order_id | Integer  | The id whose transactions are required to be cancelled 。Refer to&quot;order.put_limit&quot;for the returned result of the method。|
+| order_id | Integer(unsigned 64bit)  | The id whose transactions are required to be cancelled 。Refer to&quot;order.put_limit&quot;for the returned result of the method。|
 
 Example:
 
@@ -345,7 +345,7 @@ Parameter requested:
 | api_key | string | User's API KEY |
 | sign | string | User's signature value |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| orders_id | arrary  | For those id that requires to cancel transactions, the maximum number of orders allowed to be cancelled is 10，refer to&quot;order.put_limit&quot;for the returned result of the method.|
+| orders_id | arrary  | For those id(unsigned 64bit) that requires to cancel transactions, the maximum number of orders allowed to be cancelled is 10，refer to&quot;order.put_limit&quot;for the returned result of the method.|
 
 Example:
 
@@ -365,7 +365,7 @@ Response:
     "result": 
 	 [
             {#Correct feedback
-                   "id":8688803,    #order-ID
+                   "id":8688803,    #order-ID(unsigned 64bit)
                     "market":"ETHBTC",
                     "source":"web",    #The source identification of data request
                     "type":1,	       #Type of order placement 1-limit order
@@ -410,9 +410,9 @@ Parameter requested:
 | --- | --- | --- |
 | api_key | string | User's API KEY |
 | sign | string | User's signature value |
-| order_id | Integer  | Transaction ID，refer to "order.put_limit"for the returned result of the method|
-| offset | Integer  | equals to 0，means search from the latest transaction to previous transactions |
-| limit | Integer  | Maximum number of &quot;records&quot; returned |
+| order_id | Integer(unsigned 64bit)  | Transaction ID，refer to "order.put_limit"for the returned result of the method|
+| offset | Integer(32bit)  | equals to 0，means search from the latest transaction to previous transactions |
+| limit | Integer(32bit)  | Maximum number of &quot;records&quot; returned |
 
 Example:
 
@@ -474,7 +474,7 @@ Response:
 | --- | --- | --- |
 | api_key | string | User's API KEY |
 | sign | string | User's signature value |
-| order_id | Integer  | Transaction ID，refer to "order.put_limit"for the returned result of the method|
+| order_id | Integer(unsigned 64bit)  | Transaction ID，refer to "order.put_limit"for the returned result of the method|
 
 
 Example:
@@ -528,9 +528,9 @@ Requested parameter:
 | name of parameter | type of parameter | description |
 | --- | --- | --- |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
-| offset | Integer |  Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on.....|
-| limit | Integer  | The maximum number of &quot;records&quot;to be returned |
+| side | Integer(32bit)  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
+| offset | Integer(32bit) |  Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on.....|
+| limit | Integer(32bit)  | The maximum number of &quot;records&quot;to be returned |
 
 Example:
 
@@ -570,7 +570,7 @@ parameter requested:
 | name of parameter | type of parameter | description |
 | --- | --- | --- |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| limit | Integer |  maximum number of &quot;records&quot;to be returned，value allowed：1, 5, 10, 20, 30, 50, 100 |
+| limit | Integer(32bit) |  maximum number of &quot;records&quot;to be returned，value allowed：1, 5, 10, 20, 30, 50, 100 |
 | interval | string  | price precision，value allowed：0，0.1，0.01，0.001，……，0.0000000001 |
 
 Example:
@@ -611,8 +611,8 @@ parameter requested:
 | api_key | string | user's API KEY |
 | sign | string | user's signature value |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| offset | Integer | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on.....|
-| limit | Integer  | maximum number of &quot;records&quot;to be returned |
+| offset | Integer(32bit) | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on.....|
+| limit | Integer(32bit)  | maximum number of &quot;records&quot;to be returned |
 Example:
 
 | url | body |
@@ -674,11 +674,11 @@ parameter requested:
 | api_key | string | user's API KEY |
 | sign | string | user's signature value |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| start_time | Integer | starting time(second) |
-| end_time | Integer | ending time(second) |
-| offset | Integer | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on |
-| limit | Integer  | Maximum number of &quot;records&quot;returned |
-| side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
+| start_time | Integer(unsigned 64bit) | starting time(second) |
+| end_time | Integer(unsigned 64bit) | ending time(second) |
+| offset | Integer(32bit) | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of transactions from the earliest transaction to the second most recent transaction cannot be greater than limit; and so on |
+| limit | Integer(32bit)  | Maximum number of &quot;records&quot;returned |
+| side | Integer(32bit)  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
 
 Example:
 
@@ -785,8 +785,8 @@ parameter requested：
 | name of parameter | type of parameter | description |
 | --- | --- | --- |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| limit | Integer  | check limit in number(limit <= 1000) |
-| last_id | Integer  | return to the trading data which is greater than order_id > last_id |
+| limit | Integer(32bit)  | check limit in number(limit <= 1000) |
+| last_id | Integer(32bit)  | return to the trading data which is greater than order_id > last_id |
 
 Example：
 
@@ -823,8 +823,8 @@ requested parameter：
 | api_key | string | user's API KEY |
 | sign | string | user's signature value |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| offset | Integer  | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of all orders that meet the requirements from the second most recent order to the earliest order cannot be greater than limit; and so on.....|
-| limit | Integer   | Check limit in number(limit <= 1000) |
+| offset | Integer(32bit)  | Offset position，if value set as 0，it means that the total number of transactions from the earliest transaction to the most recent transaction cannot be greater than limit;。if value set as 1, it means that the total number of all orders that meet the requirements from the second most recent order to the earliest order cannot be greater than limit; and so on.....|
+| limit | Integer(32bit)   | Check limit in number(limit <= 1000) |
 
 Example：
 
@@ -844,9 +844,9 @@ Parameter requested：
 | name of parameter | type of parameter | description |
 | --- | --- | --- |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| start_time | Integer  | Starting timestamp(second) |
-| end_time | Integer  | ending timestamp(second)  |
-| Interval | Integer   | interval of periods,unit second, (starting time to ending time，total number of periods) < 1000 |
+| start_time | Integer(unsigned 64bit)  | Starting timestamp(second) |
+| end_time | Integer(unsigned 64bit)  | ending timestamp(second)  |
+| Interval | Integer(32bit)   | interval of periods,unit second, (starting time to ending time，total number of periods) < 1000 |
 
 Example：
 
@@ -884,7 +884,7 @@ parameter requested:
 | name of parameter | type of parameter | description |
 | --- | --- | --- |
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| period | Integer  | period of inquiry，unit is second. It refers to the time from now on to the past，for example：86400，means the previous 24 hours. |
+| period | Integer(32bit)  | period of inquiry，unit is second. It refers to the time from now on to the past，for example：86400，means the previous 24 hours. |
 
 Example：
 
