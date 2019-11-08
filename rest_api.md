@@ -162,10 +162,10 @@ REST访问的根URL：<https://api.hotbit.io/api/v1>  
 | sign | string | 用户签名值 |
 | asset | string | 资产名称，如：&quot;BTC&quot;,&quot;ETH&quot;等，&quot;&quot;表示所有资产名称 |
 | business | string | 业务名称，如：&quot;deposit&quot;或&quot;trade&quot;，&quot;&quot;表示所有业务名称 |
-| start_time | Integer | 开始时间(秒) |
-| end_time | Integer | 截止时间(秒) |
-| offset | Integer | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推 |
-| limit | Integer | 返回的最大交易笔数 |
+| start_time | Integer(无符号64位) | 开始时间(秒) |
+| end_time | Integer(无符号64位) | 截止时间(秒) |
+| offset | Integer(32位) | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推 |
+| limit | Integer(32位) | 返回的最大交易笔数 |
 
 示例：
 
@@ -293,7 +293,7 @@ Response:
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| order_id | Integer  | 要取消交易的id。参看&quot;order.put_limit&quot;方法的返回结果。|
+| order_id | Integer(无符号64位)  | 要取消交易的id。参看&quot;order.put_limit&quot;方法的返回结果。|
 
 示例：
 
@@ -350,7 +350,7 @@ Response:
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| orders_id | arrary  | 要取消交易的id,数量最多10个订单取消，参看&quot;order.put_limit&quot;方法的返回结果。|
+| orders_id | arrary  | 要取消交易的id(无符号64位),数量最多10个订单取消，参看&quot;order.put_limit&quot;方法的返回结果。|
 
 示例：
 
@@ -370,7 +370,7 @@ Response:
     "result": 
 	 [
             {#正确反馈
-                   "id":8688803,    #order-ID
+                   "id":8688803,    #order-ID(无符号64位)
                     "market":"ETHBTC",
                     "source":"web",    #数据请求来源标识
                     "type":1,	       #下单类型 1-限价单
@@ -416,9 +416,9 @@ Response:
 | --- | --- | --- |
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
-| order_id | Integer  | 交易ID，参看 "order.put_limit"方法的返回结果|
-| offset | Integer  | 等于0，表示从最近一次交易往之前查找 |
-| limit | Integer  | 最多返回 &quot;records&quot;的数量 |
+| order_id | Integer(无符号64位)  | 交易ID，参看 "order.put_limit"方法的返回结果|
+| offset | Integer(32位)  | 等于0，表示从最近一次交易往之前查找 |
+| limit | Integer(32位)  | 最多返回 &quot;records&quot;的数量 |
 
 示例：
 
@@ -441,8 +441,8 @@ Response:
         "records": [
             {
                 "time": 1521107411.116817,
-                "user": 15643,
-                "id": 1385154,
+                "user": 15643,(无符号32位)
+                "id": 1385154,(无符号64位)
                 "role": 1,
                 "price": "0.02",
                 "amount": "0.071",
@@ -452,8 +452,8 @@ Response:
             },
             {
                 "time": 1521107410.357024,#(秒)
-                "user": 15643,
-                "id": 1385151,
+                "user": 15643,(无符号32位)
+                "id": 1385151,(无符号64位)
                 "role": 1,
                 "price": "0.02",
                 "amount": "0.081",
@@ -480,7 +480,7 @@ Response:
 | --- | --- | --- |
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
-| order_id | Integer  | 交易ID，参看 "order.put_limit"方法的返回结果|
+| order_id | Integer(无符号64位)  | 交易ID，参看 "order.put_limit"方法的返回结果|
 
 
 示例：
@@ -499,10 +499,10 @@ Response:
 {
     "error": null,
     "result": {
-        "id": 1,
+        "id": 1,(无符号64位)
         "ctime": 1535545564.4409361,#(秒)
         "ftime": 1535545564.525017,#(秒)
-        "user": 15731,
+        "user": 15731,(无符号32位)
         "market": "YCCETH",
         "source": "test",
         "type": 1,
@@ -535,9 +535,9 @@ Response:
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
-| offset | Integer | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推..... |
-| limit | Integer  | 最多返回 &quot;records&quot;的数量 |
+| side | Integer(无符号32位)  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
+| offset | Integer(无符号32位) | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推..... |
+| limit | Integer(无符号32位)  | 最多返回 &quot;records&quot;的数量 |
 
 示例：
 
@@ -577,7 +577,7 @@ Response:
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| limit | Integer |  最多返回 &quot;records&quot;的数量，可取值：1, 5, 10, 20, 30, 50, 100 |
+| limit | Integer(无符号32位) |  最多返回 &quot;records&quot;的数量，可取值：1, 5, 10, 20, 30, 50, 100 |
 | interval | string  | 价格精度，可取值：0，0.1，0.01，0.001，……，0.0000000001 |
 
 示例：
@@ -618,8 +618,8 @@ Response:
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| offset | Integer | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推..... |
-| limit | Integer  | 最多返回 &quot;records&quot;的数量 |
+| offset | Integer(32位) | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推..... |
+| limit | Integer(32位)  | 最多返回 &quot;records&quot;的数量 |
 示例：
 
 | url | body |
@@ -682,11 +682,11 @@ Response:
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| start_time | Integer | 开始时间(秒) |
-| end_time | Integer | 截止时间(秒) |
-| offset | Integer | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推 |
-| limit | Integer  | 最多返回 &quot;records&quot;的数量 |
-| side | Integer  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
+| start_time | Integer(无符号64位) | 开始时间(秒) |
+| end_time | Integer(无符号64位) | 截止时间(秒) |
+| offset | Integer(32位) | 偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推 |
+| limit | Integer(32位)  | 最多返回 &quot;records&quot;的数量 |
+| side | Integer(32位)  | 1 = &quot;sell&quot;，2=&quot;buy&quot; |
 
 示例：
 
@@ -794,7 +794,7 @@ Response:
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
 | limit | Integer  | 查询个数限制(limit <= 1000) |
-| last_id | Integer  | 返回大于order_id > last_id的交易数据 |
+| last_id | Integer(无符号64位)  | 返回大于order_id > last_id的交易数据 |
 
 示例：
 
@@ -831,8 +831,8 @@ Response:
 | api_key | string | 用户API KEY |
 | sign | string | 用户签名值 |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| offset | Integer  |偏移位置，如果设置为0，表示从最新一个订单开始算起，往之前时间的所有交易记录，总笔数不能大于limit；如果设置为1，表示从次新一个订单开始算起，往之前时间的所有满足条件订单记录，总数不能大于limit；以此类推..... |
-| limit | Integer   | 查询个数限制(limit <= 1000) |
+| offset | Integer(32位)  |偏移位置，如果设置为0，表示从最新一个订单开始算起，往之前时间的所有交易记录，总笔数不能大于limit；如果设置为1，表示从次新一个订单开始算起，往之前时间的所有满足条件订单记录，总数不能大于limit；以此类推..... |
+| limit | Integer(32位)   | 查询个数限制(limit <= 1000) |
 
 示例：
 
@@ -852,9 +852,9 @@ Response:
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| start_time | Integer  | 起始时间戳(秒)  |
-| end_time | Integer  | 结束时间戳(秒)  |
-| Interval | Integer   | 周期间隔,单位秒, (起始时间到结束时间，总周期数) < 1000 |
+| start_time | Integer(无符号64位)  | 起始时间戳(秒)  |
+| end_time | Integer(无符号64位)  | 结束时间戳(秒)  |
+| Interval | Integer(32位)   | 周期间隔,单位秒, (起始时间到结束时间，总周期数) < 1000 |
 
 示例：
 
@@ -892,7 +892,7 @@ Response:
 | 参数名 | 参数类型 | 描述 |
 | --- | --- | --- |
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
-| period | Integer  | 查询周期，以秒为单位。即从现在开始往前推的时间，例如：86400，是过去24小时。 |
+| period | Integer(32位)  | 查询周期，以秒为单位。即从现在开始往前推的时间，例如：86400，是过去24小时。 |
 
 示例：
 
