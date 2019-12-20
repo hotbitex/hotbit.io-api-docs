@@ -846,7 +846,7 @@ Parameter requested：
 | market | string  | market name，such as：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
 | start_time | Integer(unsigned 64bit)  | Starting timestamp(second) |
 | end_time | Integer(unsigned 64bit)  | ending timestamp(second)  |
-| Interval | Integer(32bit)   | interval of periods,unit second, (starting time to ending time，total number of periods) < 1000 |
+| interval | Integer(32bit)   | interval of periods,unit second, (starting time to ending time，total number of periods) < 1000 |
 
 Example：
 
