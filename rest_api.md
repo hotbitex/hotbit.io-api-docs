@@ -854,7 +854,7 @@ Response:
 | market | string  | market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot; |
 | start_time | Integer(无符号64位)  | 起始时间戳(秒)  |
 | end_time | Integer(无符号64位)  | 结束时间戳(秒)  |
-| Interval | Integer(32位)   | 周期间隔,单位秒, (起始时间到结束时间，总周期数) < 1000 |
+| interval | Integer(32位)   | 周期间隔,单位秒, (起始时间到结束时间，总周期数) < 1000 |
 
 示例：
 
